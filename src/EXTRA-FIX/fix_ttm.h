@@ -51,8 +51,11 @@ class FixTTM : public Fix {
  protected:
   int nlevels_respa;
   int seed;
-  int nxgrid, nygrid, nzgrid;    // size of global grid
+  int nxgrid, nygrid, nzgrid;    // size of grid interfaced with atoms
+  int nbuffer;    // buffer extension to grid in all three directions
+  int fnxgrid,fnygrid,fnzgrid;
   int ngridtotal;                // total size of global grid
+  int gridpbc;                   // 1 if grid is periodic, 0 if not
   int deallocate_flag;
   int outflag, outevery;
   double shift, tinit;
